@@ -10,5 +10,9 @@ import scrapy
 
 class MoviesItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    url = scrapy.Field()
+    poster_url = scrapy.Field()
+    country = scrapy.Field()
+    running_time = scrapy.Field()
+    release_year = scrapy.Field()
