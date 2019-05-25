@@ -33,7 +33,7 @@ class WikipediaSpider(Spider):
     def parse(self, response: Response):
         item = MoviesItem()
         item.update({
-            'name': response.css('.infobox .summary::text').extract_first(),
+            'name': response.css('#firstHeading i::text').extract_first(),
             'poster_url': response.css('.infobox img::attr(src)').extract_first(),
             'url': response.url
         })

@@ -6,9 +6,8 @@ class Movie(Base):
     __tablename__ = 'movies'
 
     id = Column(Integer, primary_key=True)
-    unique_id = Column(String(191))
     name = Column(String(191))
-    url = Column(String(191))
+    url = Column(String(191), unique=True)
     poster_url = Column(String(191))
     country = Column(String(191))
     running_time = Column(String(191))
@@ -16,7 +15,6 @@ class Movie(Base):
 
     def __init__(self, *args, **kwargs):
         self.name = kwargs.get('name')
-        self.unique_id = kwargs.get('unique_id')
         self.url = kwargs.get('url')
         self.poster_url = kwargs.get('poster_url')
         self.country = kwargs.get('country')
