@@ -22,4 +22,24 @@ class Movie(Base):
         self.release_year = kwargs.get('release_year')
 
 
+class Country(Base):
+    __tablename__ = 'countries'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(191))
+    alpha_2_code = Column(String(2))
+    alpha_3_code = Column(String(3))
+    population = Column(Integer)
+    flag_file_name = Column(String(191))
+    flag_external_url = Column(String(191))
+
+    def __init__(self, name, alpha_2_code, alpha_3_code, population, flag_file_name, flag_external_url):
+        self.name = name
+        self.alpha_2_code = alpha_2_code
+        self.alpha_3_code = alpha_3_code
+        self.population = population
+        self.flag_file_name = flag_file_name
+        self.flag_external_url = flag_external_url
+
+
 Base.metadata.create_all(engine)
