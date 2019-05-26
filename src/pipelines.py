@@ -15,6 +15,7 @@ class MoviesPipeline(object):
 
     def process_item(self, item, spider):
         if item.get('name') and not self.session.query(Movie).filter(Movie.url == item.get('url')).first():
+            item.update({'site': spider.site})
             self.session.add(Movie(**item))
             self.session.commit()
             print('*' * 80)

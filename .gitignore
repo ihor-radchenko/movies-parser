@@ -3,3 +3,6 @@
 /.idea
 /src/.env
 /venv
+/src/__pycache__
+/src/spiders/__pycache__
+/src/commands/__pycache__

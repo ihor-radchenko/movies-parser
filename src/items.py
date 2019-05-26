@@ -16,3 +16,4 @@ class MoviesItem(scrapy.Item):
     country = scrapy.Field()
     running_time = scrapy.Field()
     release_year = scrapy.Field()
+    site = scrapy.Field()

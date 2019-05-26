@@ -11,6 +11,8 @@ class WikipediaSpider(Spider):
 
     prefix_url = 'https://en.wikipedia.org'
 
+    site = 'wiki'
+
     custom_settings = {
         'CONCURRENT_REQUESTS': 5,
         'ITEM_PIPELINES': {
