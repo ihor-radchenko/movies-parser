@@ -20,7 +20,7 @@ class MoviesPipeline(object):
             print('*' * 80)
             print('FILM PARSED: ' + item.get('name'))
             print('*' * 80)
-        else:
+        elif item.get('name'):
             print('*' * 80)
             print('DUPLICATE FOUND: ' + item.get('name'))
             print('*' * 80)
